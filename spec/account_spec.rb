@@ -7,7 +7,9 @@ describe Account do
   before(:each) do
     allow(account_tracker).to receive(:deposits_tracker)
     allow(account_tracker).to receive(:withdrawals_tracker)
+    allow(account_tracker).to receive(:log_sorted_by_most_recent)
   end
+
   context '#deposit' do
     it 'money is added to account' do
       account.deposit(1000)
@@ -32,6 +34,14 @@ describe Account do
       account.deposit(1000)
       expect(account_tracker).to receive(:withdrawals_tracker).with(500, 500)
       account.withdrew(500)
+    end
+  end
+
+  context '#view_bank_statment' do
+    it 'runs the is call method on display class' do
+      display = double 'display'
+      expect(display).to receive(:bank_statement).with(account_tracker.log_sorted_by_most_recent)
+      account.view_bank_statment(display)
     end
   end
 

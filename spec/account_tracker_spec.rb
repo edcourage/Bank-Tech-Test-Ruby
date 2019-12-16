@@ -93,4 +93,5 @@ describe AccountTracker do
       expect(account_tracker.log_sorted_by_most_recent).to eq expected_logged_actions.reverse
     end
   end
-  end
+  
+end
