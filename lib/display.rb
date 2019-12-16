@@ -1,4 +1,5 @@
 class Display
+
   def self.bank_statement(account_action_log_array)
     puts "date || credit || debit || balance"
     account_action_log_array.each do |action|
@@ -9,4 +10,5 @@ class Display
       end
     end
   end
+
 end
