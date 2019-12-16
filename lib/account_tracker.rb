@@ -23,4 +23,8 @@ class AccountTracker
     }
   end
 
+  def log_sorted_by_most_recent
+    @log.reverse
+  end
+
 end

@@ -50,4 +50,47 @@ describe AccountTracker do
     end
   end
 
-end
+  context '#log' do
+
+    it 'you can view can access account actions log' do
+      action_date = Time.now.strftime("%d/%m/%Y")
+      account_tracker.deposits_tracker(100, 1000)
+      account_tracker.withdrawals_tracker(100, 900)
+      expected_logged_actions = [{
+        type: :deposit,
+        date: action_date,
+        amount: 100,
+        balance: 1000
+      },
+      {
+        type: :withdrawal,
+        date: action_date,
+        amount: 100,
+        balance: 900
+      }]
+      expect(account_tracker.log).to eq expected_logged_actions
+    end
+  end
+
+  context '#log_sorted_by_most_recent' do
+
+    it 'you can view can access account actions log' do
+      action_date = Time.now.strftime("%d/%m/%Y")
+      account_tracker.deposits_tracker(100, 1000)
+      account_tracker.withdrawals_tracker(100, 900)
+      expected_logged_actions = [{
+        type: :deposit,
+        date: action_date,
+        amount: 100,
+        balance: 1000
+      },
+      {
+        type: :withdrawal,
+        date: action_date,
+        amount: 100,
+        balance: 900
+      }]
+      expect(account_tracker.log_sorted_by_most_recent).to eq expected_logged_actions.reverse
+    end
+  end
+  end
