@@ -6,7 +6,16 @@ describe Account do
 
   context '#deposit' do
     it 'money is added to account' do
-      expect { account.deposit(1000) }.to change { account.current_balance }.by(1000)
+      account.deposit(1000)
+      expect(account.current_balance).to eq 1000
+    end
+  end
+
+  context '#withdrew' do
+    it 'money is subtracted from account' do
+      account.deposit(1000)
+      account.withdrew(500)
+      expect(account.current_balance).to eq 500
     end
   end
 

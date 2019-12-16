@@ -8,4 +8,10 @@ class Account
   def deposit(amount)
     @current_balance += amount
   end
+
+  def withdrew(amount)
+    @current_balance -= amount
+  end
+
+  
 end
