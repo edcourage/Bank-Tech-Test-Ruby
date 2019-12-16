@@ -1,8 +1,8 @@
-##Bank tech test
+## Bank tech test
 
  This program will run using a REPL (IRB)
 
- ###User Story's
+ ### User Story's
 
  As a customer
  So I can have somewhere to store my money,
