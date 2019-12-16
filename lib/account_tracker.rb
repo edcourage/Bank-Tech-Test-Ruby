@@ -13,4 +13,14 @@ class AccountTracker
       balance: balance
     }
   end
+
+  def deposits_tracker(amount, balance, date = Time.now.strftime("%d/%m/%Y"))
+    @log << {
+      type: :deposit,
+      date: date,
+      amount: amount,
+      balance: balance
+    }
+  end
+
 end
