@@ -13,5 +13,4 @@ class Account
     @current_balance -= amount
   end
 
-  
 end

@@ -2,7 +2,7 @@ require 'account'
 
 describe Account do
 
-  let (:account) { Account.new }
+  let(:account) { Account.new }
 
   context '#deposit' do
     it 'money is added to account' do
@@ -18,6 +18,5 @@ describe Account do
       expect(account.current_balance).to eq 500
     end
   end
-
 
 end
