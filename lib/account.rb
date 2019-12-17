@@ -1,5 +1,6 @@
 require_relative 'account_tracker'
 require_relative 'display'
+
 class Account
   attr_reader :current_balance
 
@@ -19,5 +20,5 @@ class Account
   def view_bank_statment(display = Display)
     display.bank_statement(@account_tracker.log_sorted_by_most_recent)
   end
-  
+
 end

@@ -1,5 +1,5 @@
 class AccountTracker
-  attr_reader :log
+  
 
   def initialize
     @log = []
