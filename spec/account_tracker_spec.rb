@@ -7,8 +7,8 @@ describe AccountTracker do
   context '#withdrawals_tracker' do
 
     it 'action is added to action log' do
-      current_balance_after_withdrawal = 1000
-      withdrawal_amount = 500
+      current_balance_after_withdrawal = 2446
+      withdrawal_amount = 345
       account_tracker.withdrawals_tracker(withdrawal_amount, current_balance_after_withdrawal)
       expect(account_tracker.log_sorted_by_most_recent.count).to eq 1
     end
@@ -37,8 +37,8 @@ describe AccountTracker do
     end
 
     it 'the action type, date of action, amount, and balance afer action are logged' do
-      current_balance_after_deposit = 1500
-      deposit_amount = 500
+      current_balance_after_deposit = 1565
+      deposit_amount = 333
       action_date = Time.now.strftime("%d/%m/%Y")
       expected_logged_action = {
         type: :deposit,

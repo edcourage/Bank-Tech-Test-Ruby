@@ -1,9 +1,19 @@
-## Bank tech test
+## Bank Tech Test
+<img src="https://img.shields.io/static/v1?label=Ruby Version&message=2.6.3&color=red">
+<img src="https://img.shields.io/static/v1?label=Coverage&message=100%&color=success">
+<img src="https://img.shields.io/static/v1?label=Tests&message=Passing&color=success">
 
+#### Setting Up Project
+ - `bundle install`
+ 
+#### Running Tests
+	
+ - `rspec`
+ - `rubocop`_(Not all are passing)_
+	
 #### Running Program
 
 _This program will run using a REPL (IRB)_
-
 
  - `require './lib/account.rb'`
  - `account = Account.new`
@@ -16,16 +26,19 @@ _This program will run using a REPL (IRB)_
  - account.withdrew(_amount_)
  - _example_ `account.withdrew(250.10)`
 
- ##### Print Bank Statement 
+ ##### Print Bank Statement
  - `account.view_bank_statement`
  ###### example output
- 
+
  ```
  date || credit || debit || balance
 16/12/2019 || || 250.10 || 749.90
 16/12/2019 || 1000.00 || || 1000.00
 ```
-
+<img src="images/IRB-example-screen-shot.png"
+     alt="IRB-example-screen-shot"
+     style="float: left; margin-right: 10px;" />
+     
  ## User Story's
 
  ```

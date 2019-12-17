@@ -24,24 +24,25 @@ describe Account do
   end
 
   context '#withdrew' do
-    it 'money is subtracted from account' do
+    before(:each) do
       account.deposit(1000)
+    end
+    it 'money is subtracted from account' do
       account.withdrew(500)
       expect(account.current_balance).to eq 500
     end
 
     it 'withdrawals are tracked' do
-      account.deposit(1000)
       expect(account_tracker).to receive(:withdrawals_tracker).with(500, 500)
       account.withdrew(500)
     end
   end
 
-  context '#view_bank_statment' do
+  context '#view_bank_statement' do
     it 'runs the is call method on display class' do
       display = double 'display'
       expect(display).to receive(:bank_statement).with(account_tracker.log_sorted_by_most_recent)
-      account.view_bank_statment(display)
+      account.view_bank_statement(display)
     end
   end
 

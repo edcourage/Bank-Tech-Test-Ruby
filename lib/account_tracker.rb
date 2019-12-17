@@ -1,5 +1,4 @@
 class AccountTracker
-  
 
   def initialize
     @log = []

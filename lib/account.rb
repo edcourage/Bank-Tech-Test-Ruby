@@ -11,14 +11,17 @@ class Account
 
   def deposit(amount)
     @account_tracker.deposits_tracker(amount, @current_balance += amount)
+    return
   end
 
   def withdrew(amount)
     @account_tracker.withdrawals_tracker(amount, @current_balance -= amount)
+    return
   end
 
-  def view_bank_statment(display = Display)
+  def view_bank_statement(display = Display)
     display.bank_statement(@account_tracker.log_sorted_by_most_recent)
+    return
   end
 
 end
