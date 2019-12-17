@@ -1,6 +1,6 @@
 ## Bank Tech Test
 
-<img src="https://img.shields.io/static/v1?label=Ruby Version&message=2.6.3&color=red">
+<img src="https://img.shields.io/static/v1?label=Coverage&message=100%&color=success">
 <img src="https://img.shields.io/static/v1?label=Coverage&message=100%&color=success">
 <img src="https://img.shields.io/static/v1?label=Tests&message=Passing&color=success">
 
