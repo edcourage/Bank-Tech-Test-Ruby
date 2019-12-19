@@ -13,7 +13,7 @@ describe Account do
   context '#deposit' do
     it 'money is added to account' do
       account.deposit(1000)
-      expect(account.current_balance).to eq 1000
+      expect(account.deposit(1000)).to eq 2000
     end
 
     it 'deposits are tracked' do
@@ -29,7 +29,7 @@ describe Account do
     end
     it 'money is subtracted from account' do
       account.withdrew(500)
-      expect(account.current_balance).to eq 500
+      expect(account.withdrew(250)).to eq 250
     end
 
     it 'withdrawals are tracked' do

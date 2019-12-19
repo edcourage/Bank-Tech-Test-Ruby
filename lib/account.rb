@@ -2,7 +2,6 @@ require_relative 'account_tracker'
 require_relative 'display'
 
 class Account
-  attr_reader :current_balance
 
   def initialize(account_tracker = AccountTracker.new)
     @account_tracker = account_tracker
@@ -11,12 +10,12 @@ class Account
 
   def deposit(amount)
     @account_tracker.deposits_tracker(amount, @current_balance += amount)
-    return
+    @current_balance
   end
 
   def withdrew(amount)
     @account_tracker.withdrawals_tracker(amount, @current_balance -= amount)
-    return
+    @current_balance
   end
 
   def view_bank_statement(display = Display)
